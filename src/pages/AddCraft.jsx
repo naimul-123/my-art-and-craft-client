@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddCraft = () => {
 
     const { user } = useContext(AuthContext)
     const { displayName, email } = user
+
 
     const handleAddCraft = (e) => {
         e.preventDefault();
@@ -18,7 +20,7 @@ const AddCraft = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const itemdata = {
-            displayName,
+            author: displayName,
             email,
             item_name,
             image,
@@ -28,9 +30,31 @@ const AddCraft = () => {
             customization,
             price,
             rating,
+
         }
 
         console.log(itemdata)
+
+        fetch(`http://localhost:3000/crafts`, {
+            method: "POST",
+            headers: {
+                'Content-type': 'Application/json'
+            },
+            body: JSON.stringify(itemdata)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Craft added successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                    });
+                    form.reset();
+                }
+            }
+            )
+            .catch(err => console.log(err.message))
     }
     return (
         <div className=' max-w-screen-lg p-12 mx-auto bg-base-100'>
@@ -44,33 +68,7 @@ const AddCraft = () => {
                 onSubmit={handleAddCraft}>
 
 
-                <div className='form-control'>
-                    <label className='label'>
-                        <span className='label-text'>User Name</span>
-                    </label>
-                    <input
-                        type='text'
-                        name='username'
-                        defaultValue={displayName}
-                        className='input input-bordered'
-                        required
-                        disabled
-                    />
-                </div>
-                <div className='form-control'>
-                    <label className='label'>
-                        <span className='label-text'>User email</span>
-                    </label>
-                    <input
-                        type='email'
 
-                        name='email'
-                        defaultValue={email}
-                        className='input input-bordered'
-                        required
-                        disabled
-                    />
-                </div>
                 <div className='form-control'>
                     <label className='label'>
                         <span className='label-text'>Item Name</span>
@@ -83,6 +81,20 @@ const AddCraft = () => {
                         required
                     />
                 </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Subcategory</span>
+                    </label>
+                    <select className="select select-bordered" defaultValue="" name='sub_catagory' required>
+                        <option value="" disabled >---Select---</option>
+                        <option value="Landscape Painting">Landscape Painting</option>
+                        <option value="Portrait Drawing">Portrait Drawing</option>
+                        <option value="Watercolour Painting">Watercolour Painting</option>
+                        <option value="Oil Painting">Oil Painting</option>
+                        <option value="Charcoal Sketching">Charcoal Sketching</option>
+                        <option value="Cartoon Drawing">Cartoon Drawing</option>
+                    </select>
+                </div>
                 <div className='form-control'>
                     <label className='label'>
                         <span className='label-text'>Image</span>
@@ -91,18 +103,6 @@ const AddCraft = () => {
                         type='text'
                         placeholder='Enter craft photo url'
                         name='image'
-                        className='input input-bordered'
-                        required
-                    />
-                </div>
-                <div className='form-control'>
-                    <label className='label'>
-                        <span className='label-text'>Subcategory</span>
-                    </label>
-                    <input
-                        type='text'
-                        name='sub_catagory'
-                        placeholder="Enter item's subcategory name"
                         className='input input-bordered'
                         required
                     />
@@ -167,7 +167,33 @@ const AddCraft = () => {
                         required
                     />
                 </div>
+                <div className='form-control'>
+                    <label className='label'>
+                        <span className='label-text'>User Name</span>
+                    </label>
+                    <input
+                        type='text'
+                        name='username'
+                        defaultValue={displayName}
+                        className='input input-bordered'
+                        required
+                        disabled
+                    />
+                </div>
+                <div className='form-control'>
+                    <label className='label'>
+                        <span className='label-text'>User email</span>
+                    </label>
+                    <input
+                        type='email'
 
+                        name='email'
+                        defaultValue={email}
+                        className='input input-bordered'
+                        required
+                        disabled
+                    />
+                </div>
 
                 <div className='form-control mt-6 md:col-span-2'>
                     <button className='btn btn-primary'>

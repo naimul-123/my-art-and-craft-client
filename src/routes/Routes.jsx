@@ -6,6 +6,9 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile";
 import Home from "../pages/Home";
 import AddCraft from "../pages/AddCraft";
+import AllCraft from "../pages/AllCraft";
+import DetailsCraft from "../pages/DetailsCraft";
+import MyCraft from "../pages/MyCraft";
 
 
 const routes = createBrowserRouter([
@@ -27,6 +30,22 @@ const routes = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
+            },
+            {
+                path: "/allcraft",
+                element: <AllCraft />,
+                loader: () => fetch(`http://localhost:3000/crafts`)
+            },
+            {
+                path: "/crafts/:id",
+                element: <PrivateRoute> <DetailsCraft /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+
+            },
+            {
+                path: "/mycrafts",
+                element: <PrivateRoute> <MyCraft /></PrivateRoute>,
+
             },
             {
                 path: "/addcraft",

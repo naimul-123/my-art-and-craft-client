@@ -11,7 +11,7 @@ const Navbar = () => {
                 <NavLink to='/'>Home</NavLink>
             </li>
             <li>
-                <NavLink to='/allart'>All Art & craft</NavLink>
+                <NavLink to='/allcraft'>All Art & craft</NavLink>
             </li>
 
             <li>
@@ -20,7 +20,7 @@ const Navbar = () => {
 
             {user && (
                 <li>
-                    <NavLink to='/myart'>My Art & Craft</NavLink>
+                    <NavLink to='/mycrafts'>My Art & Craft</NavLink>
                 </li>
             )}
 
