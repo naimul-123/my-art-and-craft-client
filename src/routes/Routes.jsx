@@ -3,13 +3,12 @@ import App from '../App'
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import PrivateRoute from "./PrivateRoute";
-import UpdateProfile from "../pages/UpdateProfile";
 import Home from "../pages/Home";
 import AddCraft from "../pages/AddCraft";
 import AllCraft from "../pages/AllCraft";
 import DetailsCraft from "../pages/DetailsCraft";
 import MyCraft from "../pages/MyCraft";
-import SubCatagory from "../pages/SubCatagory";
+import SubCatagory from "../conponents/SubCatagory";
 import UpdateMyCraft from "../pages/UpdateMyCraft";
 import NotFound from "../pages/NotFound";
 
@@ -20,7 +19,6 @@ const routes = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
-        loader: () => fetch('/data.json'),
         errorElement: <NotFound />,
         children: [
             {
@@ -40,7 +38,7 @@ const routes = createBrowserRouter([
             {
                 path: "/allcraft",
                 element: <AllCraft />,
-                loader: () => fetch(`http://localhost:3000/crafts`)
+
             },
             {
                 path: "/catagories/:catagory",

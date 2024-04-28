@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,11 +15,33 @@ import {
 } from 'swiper/modules';
 
 import Slider from './Slider';
-import { DataContext } from '../App';
+
 
 const Hero = () => {
-    const data = useContext(DataContext)
-    return (
+    const [curoseldata, setCuroselData] = useState()
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+
+        const dataLaoder = () => {
+            fetch(`http://localhost:3000/curosel`)
+                .then(res => res.json())
+                .then(data => {
+                    setCuroselData(data)
+                    setLoading(false)
+                })
+                .catch(err => console.log(err.message))
+        }
+
+        dataLaoder();
+
+    })
+
+    if (loading) {
+        return <div className="min-h-screen flex flex-col items-center justify-center"><span className="loading loading-lg loading-spinner text-secondary "></span></div>
+    }
+
+    else return (
         <>
             <Swiper
                 navigation
@@ -35,9 +57,9 @@ const Hero = () => {
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
                 className='mySwiper'>
-                {data &&
-                    data.map((singleData, idx) => (
-                        <SwiperSlide key={idx}>
+                {curoseldata &&
+                    curoseldata.map((singleData) => (
+                        <SwiperSlide key={singleData._id}>
                             <Slider singleData={singleData}></Slider>
                         </SwiperSlide>
                     ))}

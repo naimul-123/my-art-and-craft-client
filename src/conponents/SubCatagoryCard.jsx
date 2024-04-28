@@ -2,19 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SubCatagoryCard = ({ craft }) => {
-    const { _id, image, item_name, sub_catagory, description, author, email, price } = craft;
+    const { image, sub_catagory } = craft;
     const subCatagorySlag = sub_catagory.replace(/ /g, "_").toLowerCase();
     return (
-        <div className="card max-w-96 glass">
-            <figure><img src={image} alt="car!" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Life hack</h2>
-                <p>How to park your car at your garage?</p>
-                <div className="card-actions justify-end">
-                    <Link to={`/catagories/${sub_catagory}`} className="btn btn-primary">View Details</Link>
-                </div>
+        <Link to={`/catagories/${sub_catagory}`} className="card image-full max-h-72 hover:scale-105 transform duration-1000 ">
+            <figure className=''><img src={image} alt={sub_catagory} /></figure>
+            <div className="card-body justify-center items-center">
+                <h2 className="card-title text-4xl font-bold">{sub_catagory}</h2>
             </div>
-        </div>
+        </Link>
     );
 };
 

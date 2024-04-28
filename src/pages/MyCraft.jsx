@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const MyCraft = () => {
     const [mycrafts, setMycrafts] = useState([])
     const [customization, setCustomization] = useState()
-    console.log(customization)
+
     const { user } = useContext(AuthContext)
     const userInfo = {
         name: user.displayName,
@@ -73,12 +73,12 @@ const MyCraft = () => {
     }
     return (
         <div className='flex flex-col items-center gap-3'>
-            <div className='max-w-sm'>
-                <div className="form-control">
+            <div className='max-w-sm '>
+                <div className="flex gap-4">
                     <label className="label cursor-pointer">
                         <span className="label-text">Short By</span>
                     </label>
-                    <select className="select select-bordered" name='customization' onChange={handleChange}>
+                    <select className="select select-bordered select-primary" name='customization' onChange={handleChange}>
                         <option value="" disabled >---Select One---</option>
                         <option value="">Show All</option>
                         <option value="yes">Only Customization: Yes</option>

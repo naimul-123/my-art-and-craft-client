@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -19,7 +19,7 @@ const UpdateMyCraft = () => {
         stock_status } = loadedCraft
     const { user } = useContext(AuthContext)
     const { displayName, email } = user
-
+    const navigate = useNavigate();
 
     const handleUpdateCraft = (e) => {
         e.preventDefault();
@@ -70,6 +70,7 @@ const UpdateMyCraft = () => {
                         confirmButtonText: 'OK',
                     });
                     form.reset();
+                    navigate('/mycrafts')
                 }
             }
             )

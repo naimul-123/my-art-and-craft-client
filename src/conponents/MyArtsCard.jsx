@@ -19,17 +19,20 @@ const MyArtsCard = ({ craft, handleDelete }) => {
         <div className="card max-w-96 glass">
 
 
-            <figure><img src={image} alt="car!" /></figure>
+            <figure className='max-h-72'><img src={image} alt={item_name} /></figure>
             <div className="card-body">
-                <h2 className="card-title">{item_name}</h2>
-                <p>Price: ${price}</p>
-                <p>Rating: {rating}</p>
-                <p>Customization: {customization}</p>
-                <p>Stock Status: {stock_status}</p>
+                <div className='space-x-3'>
+                    <span className='badge badge-secondary'>{stock_status}</span>
+                    <span className='badge badge-secondary'>Price: ${price}</span>
+                    <span className='badge badge-secondary'>Rating:{rating}</span>
+                    <span className='badge badge-secondary'>Customization:{customization.toUpperCase()}</span>
 
+                </div>
+                <h2 className="card-title">{item_name}</h2>
+                <p>{description}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/crafts/${_id}`} className="btn btn-info">View Details</Link>
-                    <Link to={`/update/${_id}`} className="btn btn-secondary">Update</Link>
+                    <Link to={`/update/${_id}`} className="btn btn-secondary">Edit</Link>
                     <button className="btn btn-warning" onClick={() => handleDelete(_id)}>delete</button>
                 </div>
             </div>
