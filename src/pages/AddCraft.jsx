@@ -99,18 +99,6 @@ const AddCraft = () => {
                 </div>
                 <div className='form-control md:col-span-2'>
                     <label className='label'>
-                        <span className='label-text'>Image</span>
-                    </label>
-                    <input
-                        type='text'
-                        placeholder='Enter craft photo url'
-                        name='image'
-                        className='input input-bordered input-primary'
-                        required
-                    />
-                </div>
-                <div className='form-control'>
-                    <label className='label'>
                         <span className='label-text'>Description</span>
                     </label>
                     <input
@@ -121,6 +109,19 @@ const AddCraft = () => {
                         required
                     />
                 </div>
+                <div className='form-control '>
+                    <label className='label'>
+                        <span className='label-text'>Image</span>
+                    </label>
+                    <input
+                        type='text'
+                        placeholder='Enter craft photo url'
+                        name='image'
+                        className='input input-bordered input-primary'
+                        required
+                    />
+                </div>
+
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Stock Status</span>

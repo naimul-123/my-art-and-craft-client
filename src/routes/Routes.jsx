@@ -11,6 +11,7 @@ import DetailsCraft from "../pages/DetailsCraft";
 import MyCraft from "../pages/MyCraft";
 import SubCatagory from "../pages/SubCatagory";
 import UpdateMyCraft from "../pages/UpdateMyCraft";
+import NotFound from "../pages/NotFound";
 
 
 
@@ -20,6 +21,7 @@ const routes = createBrowserRouter([
         path: "/",
         element: <App></App>,
         loader: () => fetch('/data.json'),
+        errorElement: <NotFound />,
         children: [
             {
                 index: true,

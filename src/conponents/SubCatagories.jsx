@@ -4,7 +4,7 @@ import SubCatagoryCard from './SubCatagoryCard';
 
 const SubCatagories = () => {
     const [crafts, setCrafts] = useState([])
-    // console.log(crafts)
+    console.log("subcatagory", crafts)
 
     useEffect(() => {
         fetch(`http://localhost:3000/subcatagories`)

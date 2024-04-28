@@ -6,39 +6,42 @@ const AllCraft = () => {
     const allCrafts = useLoaderData()
 
 
+    if (allCrafts) {
+        return (
+            <div>
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>
+                                    SL
+                                </th>
+                                <th>Craft Name</th>
+                                <th>Author</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-    // console.log(allCrafts)
-    return (
-        <div>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>
-                                SL
-                            </th>
-                            <th>Craft Name</th>
-                            <th>Author</th>
-                            <th>Price</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                            {allCrafts.map((craft, idx) =>
 
-                        {allCrafts.map((craft, idx) =>
+                                <CraftRow key={craft._id} idx={idx} craft={craft} />
 
-                            <CraftRow key={craft._id} idx={idx} craft={craft} />
-
-                        )}
+                            )}
 
 
-                    </tbody>
+                        </tbody>
 
-                </table>
+                    </table>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    else return <div className="min-h-screen flex flex-col items-center justify-center"><span className="loading loading-lg loading-spinner text-secondary "></span></div>
+    // console.log(allCrafts)
+
 };
 
 export default AllCraft;

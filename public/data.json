@@ -1,7 +1,7 @@
 [
 	{
 		"id": 1,
-		"estate_title": "New This week",
+		"title": "New This week",
 		"description": "Discover New Art Our Curators Love Every Week",
 		"image": "https://i.ibb.co/GQyfkz7/hp-hero-slide1.jpg",
 		"btntext": "Start Exploring",
@@ -9,7 +9,7 @@
 	},
 	{
 		"id": 2,
-		"estate_title": "Discover Art You Love",
+		"title": "Discover Art You Love",
 		"description": "Browse Curated Collections Updated Daily",
 		"image": "https://i.ibb.co/JQ5JhBh/hp-hero-slide2.jpg",
 		"btntext": "Shop Collections",
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": 3,
-		"estate_title": "Get Recommendations",
+		"title": "Get Recommendations",
 		"description": "Work with an Art Advisor to Find Your Perfect Artwork",
 		"image": "https://i.ibb.co/ckB4dDF/hp-hero-slide3.jpg",
 		"btntext": "Get Started",
