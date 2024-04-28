@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CraftRow = ({ craft, idx }) => {
     const { _id, image, item_name, description, author, email, price } = craft;
     return (
-        <tr>
+        <tr className=''>
 
             <th>
                 {idx + 1}
@@ -16,7 +16,7 @@ const CraftRow = ({ craft, idx }) => {
                             <img src={image} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
-                    <div>
+                    <div className=' max-w-sm'>
                         <div className="font-bold">{item_name}</div>
                         <div className="text-sm opacity-50">{description}</div>
                     </div>

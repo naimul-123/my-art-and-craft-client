@@ -10,9 +10,9 @@ const AllCraft = () => {
         return (
             <div>
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table max-w-screen-lg mx-auto">
                         {/* head */}
-                        <thead>
+                        <thead className='text-center'>
                             <tr>
                                 <th>
                                     SL

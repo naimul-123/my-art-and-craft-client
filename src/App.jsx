@@ -8,7 +8,7 @@ function App() {
   const data = useLoaderData()
 
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto">
       <Navbar />
       <DataContext.Provider value={data}>
         <Outlet></Outlet>

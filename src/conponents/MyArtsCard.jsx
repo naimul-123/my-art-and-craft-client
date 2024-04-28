@@ -28,6 +28,7 @@ const MyArtsCard = ({ craft, handleDelete }) => {
                 <p>Stock Status: {stock_status}</p>
 
                 <div className="card-actions justify-end">
+                    <Link to={`/crafts/${_id}`} className="btn btn-info">View Details</Link>
                     <Link to={`/update/${_id}`} className="btn btn-secondary">Update</Link>
                     <button className="btn btn-warning" onClick={() => handleDelete(_id)}>delete</button>
                 </div>
