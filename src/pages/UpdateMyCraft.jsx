@@ -1,14 +1,27 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
-const AddCraft = () => {
-
+const UpdateMyCraft = () => {
+    const loadedCraft = useLoaderData();
+    // console.log(craft)
+    const {
+        _id,
+        item_name,
+        image,
+        sub_catagory,
+        description,
+        processing_time,
+        customization,
+        price,
+        rating,
+        stock_status } = loadedCraft
     const { user } = useContext(AuthContext)
     const { displayName, email } = user
 
 
-    const handleAddCraft = (e) => {
+    const handleUpdateCraft = (e) => {
         e.preventDefault();
         const form = e.target;
         const item_name = form.item_name.value;
@@ -20,7 +33,7 @@ const AddCraft = () => {
         const stock_status = form.stock_status.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const itemdata = {
+        const updatedCraft = {
             author: displayName,
             email,
             item_name,
@@ -35,10 +48,14 @@ const AddCraft = () => {
 
         }
 
+        const itemdata = {
+            id: _id,
+            updatedCraft
 
+        }
 
         fetch(`http://localhost:3000/crafts`, {
-            method: "POST",
+            method: "PUT",
             headers: {
                 'Content-type': 'Application/json'
             },
@@ -48,7 +65,7 @@ const AddCraft = () => {
                 if (data.acknowledged) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Craft added successfully!',
+                        text: 'Craft Updated successfully!',
                         icon: 'success',
                         confirmButtonText: 'OK',
                     });
@@ -67,7 +84,7 @@ const AddCraft = () => {
 
             <form
                 className='grid grid-cols-1 md:grid-cols-2  gap-4'
-                onSubmit={handleAddCraft}>
+                onSubmit={handleUpdateCraft}>
 
 
 
@@ -79,6 +96,7 @@ const AddCraft = () => {
                         type='text'
                         name='item_name'
                         placeholder='Enter item name'
+                        defaultValue={item_name}
                         className='input input-bordered input-primary'
                         required
                     />
@@ -87,7 +105,7 @@ const AddCraft = () => {
                     <label className="label">
                         <span className="label-text">Subcategory</span>
                     </label>
-                    <select className="select select-bordered select-primary" defaultValue="" name='sub_catagory' required>
+                    <select className="select select-bordered select-primary" defaultValue={sub_catagory} name='sub_catagory' required>
                         <option value="" disabled >---Select---</option>
                         <option value="Landscape Painting">Landscape Painting</option>
                         <option value="Portrait Drawing">Portrait Drawing</option>
@@ -99,33 +117,36 @@ const AddCraft = () => {
                 </div>
                 <div className='form-control md:col-span-2'>
                     <label className='label'>
-                        <span className='label-text'>Image</span>
-                    </label>
-                    <input
-                        type='text'
-                        placeholder='Enter craft photo url'
-                        name='image'
-                        className='input input-bordered input-primary'
-                        required
-                    />
-                </div>
-                <div className='form-control'>
-                    <label className='label'>
                         <span className='label-text'>Description</span>
                     </label>
                     <input
                         type='text'
                         name='description'
                         placeholder='Write short description'
+                        defaultValue={description}
                         className='input input-bordered input-primary'
                         required
                     />
                 </div>
+                <div className='form-control '>
+                    <label className='label'>
+                        <span className='label-text'>Image</span>
+                    </label>
+                    <input
+                        type='text'
+                        placeholder='Enter craft photo url'
+                        name='image'
+                        defaultValue={image}
+                        className='input input-bordered input-primary'
+                        required
+                    />
+                </div>
+
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Stock Status</span>
                     </label>
-                    <select className="select select-bordered select-primary" defaultValue="" name='stock_status' required>
+                    <select className="select select-bordered select-primary" defaultValue={stock_status} name='stock_status' required>
                         <option value="" disabled >---Select---</option>
                         <option value="In stock">In stock</option>
                         <option value="Made to Order">Made to Order</option>
@@ -139,6 +160,7 @@ const AddCraft = () => {
                         type='text'
                         name='processing_time'
                         placeholder='Enter craft processing time in minute'
+                        defaultValue={processing_time}
                         className='input input-bordered input-primary'
                         required
                     />
@@ -149,8 +171,8 @@ const AddCraft = () => {
                         <span className="label-text">Customization?</span>
                     </label>
                     <div className='inline-flex gap-2 items-center'>
-                        <input type="radio" name="customization" className="radio checked:bg-green-500" defaultChecked value="yes" /> <span>Yes</span>
-                        <input type="radio" name="customization" className="radio checked:bg-red-500" value="no" /> <span>No</span>
+                        <input type="radio" name="customization" className="radio checked:bg-green-500" defaultChecked={customization === "yes"} value="yes" /> <span>Yes</span>
+                        <input type="radio" name="customization" className="radio checked:bg-red-500" defaultChecked={customization === "no"} value="no" /> <span>No</span>
                     </div>
 
 
@@ -163,6 +185,7 @@ const AddCraft = () => {
                         type='text'
                         name='price'
                         placeholder='Enter craft price'
+                        defaultValue={price}
                         className='input input-bordered input-primary'
                         required
                     />
@@ -175,6 +198,7 @@ const AddCraft = () => {
                         type='text'
                         name='rating'
                         placeholder='Enter craft rating'
+                        defaultValue={rating}
                         className='input input-bordered input-primary'
                         required
                     />
@@ -209,7 +233,7 @@ const AddCraft = () => {
 
                 <div className='form-control mt-6 md:col-span-2'>
                     <button className='btn btn-primary'>
-                        Add
+                        Update
                     </button>
                 </div>
 
@@ -219,4 +243,4 @@ const AddCraft = () => {
     );
 };
 
-export default AddCraft;
+export default UpdateMyCraft;

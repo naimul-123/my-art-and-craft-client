@@ -9,6 +9,10 @@ import AddCraft from "../pages/AddCraft";
 import AllCraft from "../pages/AllCraft";
 import DetailsCraft from "../pages/DetailsCraft";
 import MyCraft from "../pages/MyCraft";
+import SubCatagory from "../pages/SubCatagory";
+import UpdateMyCraft from "../pages/UpdateMyCraft";
+
+
 
 
 const routes = createBrowserRouter([
@@ -37,11 +41,24 @@ const routes = createBrowserRouter([
                 loader: () => fetch(`http://localhost:3000/crafts`)
             },
             {
+                path: "/catagories/:catagory",
+                element: <SubCatagory></SubCatagory>,
+                loader: ({ params }) => fetch(`http://localhost:3000/catagories/${params.catagory}`)
+
+            },
+            {
                 path: "/crafts/:id",
                 element: <PrivateRoute> <DetailsCraft /></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
 
             },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute> <UpdateMyCraft /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+
+            },
+
             {
                 path: "/mycrafts",
                 element: <PrivateRoute> <MyCraft /></PrivateRoute>,
