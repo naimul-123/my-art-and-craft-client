@@ -16,7 +16,7 @@ const SubCatagories = () => {
         <div className='flex flex-col items-center'>
             <h2 className="text-5xl font-bold text-purple-500 my-16">Subcatagories</h2>
 
-            <div className='grid grid-cols-3 gap-4'>{crafts && crafts.map((craft) => <SubCatagoryCard key={craft._id} craft={craft}></SubCatagoryCard>)}</div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>{crafts && crafts.map((craft) => <SubCatagoryCard key={craft._id} craft={craft}></SubCatagoryCard>)}</div>
         </div>
     );
 };

@@ -3,8 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 
 const DetailsCraft = () => {
     const craft = useLoaderData();
-    const { _id, image, item_name, description, author, email, price, stock_status, processing_time, rating, customization } = craft;
-    console.log(craft)
+    const { image, item_name, description, author, email, price, stock_status, processing_time, rating, customization } = craft;
+
     return (
 
         <div className="card max-w-screen-lg mx-auto  bg-base-100 shadow-xl p-16">

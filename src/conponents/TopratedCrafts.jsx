@@ -17,7 +17,7 @@ const TopratedCrafts = () => {
                 <h2 className='text-5xl font-bold text-purple-500'>Top Rated Arts and Craft</h2>
             </div>
 
-            <div className='grid grid-cols-3 gap-4'>{crafts && crafts.map((craft) => <CraftCard key={craft._id} craft={craft}></CraftCard>)}</div>
+            <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4'>{crafts && crafts.map((craft) => <CraftCard key={craft._id} craft={craft}></CraftCard>)}</div>
         </div>
     );
 };

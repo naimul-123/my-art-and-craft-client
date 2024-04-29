@@ -29,8 +29,8 @@ const Footer = () => {
     return (
         <footer className="py-6 bg-gray-800 text-gray-50">
             <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-                <div className="grid grid-cols-12">
-                    <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
+                <div className="flex justify-center lg:justify-between gap-10 p-12 items-center">
+                    <div className="pb-6 md:col-span-2 ">
                         <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
                             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="flex-shrink-0 w-5 h-5 rounded-full text-gray-900">
@@ -40,7 +40,7 @@ const Footer = () => {
                             <span className="self-center text-2xl font-semibold">Brush & Palette</span>
                         </a>
                     </div>
-                    <div className="col-span-6 text-center md:text-left md:col-span-3">
+                    <div className="md:col-span-2">
                         <p className="pb-1 text-lg font-medium">Pages</p>
                         <ul>
                             {links}
