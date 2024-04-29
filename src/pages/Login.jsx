@@ -162,7 +162,7 @@ const LogIn = () => {
                                         className='link font-semibold link-secondary'>
                                         Register here
                                     </Link>
-                                </p>d
+                                </p>
                             </div>
                         </form>
                     </div>

@@ -42,7 +42,7 @@ const Hero = () => {
     }
 
     else return (
-        <>
+        <div className='px-4'>
             <Swiper
                 navigation
                 autoplay={{
@@ -64,8 +64,8 @@ const Hero = () => {
                         </SwiperSlide>
                     ))}
             </Swiper>
-        </>
+        </div>
     );
-};
 
+};
 export default Hero;

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaBars } from "react-icons/fa";
+import { Typewriter } from 'react-simple-typewriter';
 
 const Navbar = () => {
     const [theme, setTheme] = useState(() => {
@@ -65,7 +66,18 @@ const Navbar = () => {
                         </ul>
 
                     </div>
-                    <a className="btn btn-ghost text-xl">Brush & Palette</a>
+                    <a className="btn btn-ghost text-xl">
+                        <Typewriter
+                            words={['Brush & Palette']}
+                            loop={1}
+
+                            cursorStyle='_'
+                            typeSpeed={70}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+
+                        />
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

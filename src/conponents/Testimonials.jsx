@@ -18,6 +18,8 @@ import {
 import Slider from './Slider';
 import TestimonialCard from './TestimonialCard';
 import PropTypes from 'prop-types';
+import { Typewriter } from 'react-simple-typewriter';
+import { Fade } from 'react-awesome-reveal';
 const Testimonials = () => {
     const [testimonialsData, setTestimonialsData] = useState()
 
@@ -31,13 +33,18 @@ const Testimonials = () => {
     return (
         <div className=' container p-0 sm:p-4 md:p-6 lg:p-12 ' id='feedback'>
             <div className=' mx-auto max-w-sm my-16 text-center'  >
-                <p className=' text-blue-800 inline-flex gap-6 '>
 
-                    <span className='text-2xl'>Our Clients</span>{' '}
-                </p>
-                <h2 className='font-bold text-3xl md:text-5xl'>Testimonial</h2>
 
+                <Fade duration={3000} direction='left' delay={0} cascade damping={0}>
+                    <p className=' text-blue-800 inline-flex gap-6 '>
+
+                        <span className='text-2xl'>Our Clients</span>{' '}
+                    </p>
+                    <h2 className='font-bold text-3xl md:text-5xl'>Testimonial</h2>
+                </Fade>
             </div>
+
+
             <div>
                 <Swiper
 
