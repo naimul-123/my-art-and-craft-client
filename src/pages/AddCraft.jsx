@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const AddCraft = () => {
 
@@ -60,7 +61,9 @@ const AddCraft = () => {
     }
     return (
         <div className=' max-w-screen-lg p-12 mx-auto bg-base-100'>
-
+            <Helmet>
+                <title>Add new craft</title>
+            </Helmet>
             <div className='text-center max-w-3/5 w-full'>
                 <h2 className='text-5xl font-rancho'>Add New Craft</h2>
             </div>

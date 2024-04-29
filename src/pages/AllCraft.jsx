@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CraftRow from '../conponents/CraftRow';
+import { Helmet } from 'react-helmet';
 
 const AllCraft = () => {
     const [allCrafts, setAllCrafts] = useState()
@@ -28,6 +29,9 @@ const AllCraft = () => {
 
     else return (
         <div>
+            <Helmet>
+                <title>All crafts</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table max-w-screen-lg mx-auto">
                     {/* head */}

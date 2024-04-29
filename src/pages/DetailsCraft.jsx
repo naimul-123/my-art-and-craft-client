@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 
 const DetailsCraft = () => {
@@ -8,6 +9,9 @@ const DetailsCraft = () => {
     return (
 
         <div className="card max-w-screen-lg mx-auto  bg-base-100 shadow-xl p-16">
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
             <figure className='max-h-[50vh] h-svh'><img src={image} alt="Album" /></figure>
             <div className="card-body">
                 <div className='space-y-2'>

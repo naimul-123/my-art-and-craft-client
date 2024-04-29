@@ -8,7 +8,7 @@ import AddCraft from "../pages/AddCraft";
 import AllCraft from "../pages/AllCraft";
 import DetailsCraft from "../pages/DetailsCraft";
 import MyCraft from "../pages/MyCraft";
-import SubCatagory from "../conponents/SubCatagory";
+import SubCatagory from "../pages/SubCatagory";
 import UpdateMyCraft from "../pages/UpdateMyCraft";
 import NotFound from "../pages/NotFound";
 

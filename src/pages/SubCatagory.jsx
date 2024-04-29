@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useLocation, useParams } from 'react-router-dom';
-import CraftCard from './CraftCard';
+import CraftCard from '../conponents/CraftCard';
+import { Helmet } from 'react-helmet';
 
 const SubCatagory = () => {
     const crafts = useLoaderData()
@@ -8,6 +9,9 @@ const SubCatagory = () => {
 
     return (
         <div className='flex flex-col items-center justify-center'>
+            <Helmet>
+                <title>Sub catagory crafts</title>
+            </Helmet>
             <div className='mx-auto max-w-sm'>
                 <h2>Sub Catagory Name: {params.catagory}</h2>
             </div>

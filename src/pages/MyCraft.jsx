@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import MyArtsCard from '../conponents/MyArtsCard';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyCraft = () => {
     const [mycrafts, setMycrafts] = useState([])
@@ -73,6 +74,9 @@ const MyCraft = () => {
     }
     return (
         <div className='flex flex-col items-center gap-3'>
+            <Helmet>
+                <title>My Craft</title>
+            </Helmet>
             <div className='max-w-sm '>
                 <div className="flex gap-4">
                     <label className="label cursor-pointer">
