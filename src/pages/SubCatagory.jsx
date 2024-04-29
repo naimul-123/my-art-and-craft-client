@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLoaderData, useLocation, useParams } from 'react-router-dom';
+
+import { useLoaderData, useParams } from 'react-router-dom';
 import CraftCard from '../conponents/CraftCard';
 import { Helmet } from 'react-helmet';
 

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const CraftRow = ({ craft, idx }) => {
     const { _id, image, item_name, description, author, email, price } = craft;
     return (
@@ -35,5 +34,11 @@ const CraftRow = ({ craft, idx }) => {
 
     );
 };
+
+CraftRow.propTypes = {
+    craft: PropTypes.object.isRequired,
+    idx: PropTypes.number.isRequired
+
+}
 
 export default CraftRow;

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const MyArtsCard = ({ craft, handleDelete }) => {
     const {
         _id,
@@ -32,7 +31,10 @@ const MyArtsCard = ({ craft, handleDelete }) => {
                         </p>
 
                     </div>
-                    <h2 className="card-title">{item_name}</h2>
+                    <div>
+                        <h2 className="card-title">{item_name}</h2>
+                        <p>Sub Catagory: <span className='badge'>{sub_catagory}</span> </p>
+                    </div>
                     <p>{description}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/crafts/${_id}`} className="btn btn-info">View Details</Link>
@@ -45,4 +47,9 @@ const MyArtsCard = ({ craft, handleDelete }) => {
     );
 };
 
+MyArtsCard.propTypes = {
+    craft: PropTypes.object.isRequired,
+    handleDelete: PropTypes.func.isRequired
+
+}
 export default MyArtsCard;

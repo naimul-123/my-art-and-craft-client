@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CraftCard from './CraftCard';
 import { Typewriter } from 'react-simple-typewriter'
-import { Bounce, Fade } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 const ArtAndCraftSection = () => {
     const [crafts, setCrafts] = useState([])

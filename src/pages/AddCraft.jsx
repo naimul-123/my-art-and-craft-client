@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';

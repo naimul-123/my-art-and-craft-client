@@ -1,4 +1,5 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const TestimonialCard = ({ testimonial }) => {
 
@@ -22,5 +23,9 @@ const TestimonialCard = ({ testimonial }) => {
         </section>
     );
 };
+
+TestimonialCard.propTypes = {
+    testimonial: PropTypes.object.isRequired
+}
 
 export default TestimonialCard;

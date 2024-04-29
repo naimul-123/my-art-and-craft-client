@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import CraftCard from './CraftCard';
+import { useEffect, useState } from 'react';
 import SubCatagoryCard from './SubCatagoryCard';
-import { Helmet } from 'react-helmet';
 import { Typewriter } from 'react-simple-typewriter';
 import { Fade } from 'react-awesome-reveal';
 

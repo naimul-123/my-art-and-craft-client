@@ -1,10 +1,10 @@
-import React from 'react';
-import { Bounce, Fade, Flip, Slide, Zoom } from 'react-awesome-reveal';
-import { Link } from 'react-router-dom';
 
+import { Zoom } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 const CraftCard = ({ craft }) => {
 
-    const { _id, image, item_name, description, processing_time, author, email, price, stock_status, rating, customization } = craft;
+    const { _id, image, item_name, sub_catagory, description, processing_time, price, stock_status, rating, customization } = craft;
     return (
 
 
@@ -22,7 +22,10 @@ const CraftCard = ({ craft }) => {
                         </p>
 
 
-                        <h2 className="card-title">{item_name}</h2>
+                        <div>
+                            <h2 className="card-title">{item_name}</h2>
+                            <p>Sub Catagory: <span className='badge'>{sub_catagory}</span> </p>
+                        </div>
                         <p>{description}</p>
 
                     </div>
@@ -40,5 +43,9 @@ const CraftCard = ({ craft }) => {
 
     );
 };
+CraftCard.propTypes = {
+    craft: PropTypes.object.isRequired
+
+}
 
 export default CraftCard;

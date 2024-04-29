@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CraftCard from './CraftCard';
 import { Typewriter } from 'react-simple-typewriter';
 import { Fade } from 'react-awesome-reveal';

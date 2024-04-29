@@ -1,10 +1,11 @@
-import React from 'react';
-import { Flip, Zoom } from 'react-awesome-reveal';
+
+import { Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const SubCatagoryCard = ({ craft }) => {
     const { image, sub_catagory } = craft;
-    const subCatagorySlag = sub_catagory.replace(/ /g, "_").toLowerCase();
+
     return (
 
         <Zoom duration={2000} cascade damping={0.2}>
@@ -20,5 +21,9 @@ const SubCatagoryCard = ({ craft }) => {
         </Zoom>
     );
 };
+
+SubCatagoryCard.propTypes = {
+    craft: PropTypes.object.isRequired
+}
 
 export default SubCatagoryCard;

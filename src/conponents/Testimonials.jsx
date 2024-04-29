@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,13 +12,11 @@ import {
     Pagination,
     Scrollbar,
     A11y,
-    EffectCoverflow,
+
 } from 'swiper/modules';
 
-import Slider from './Slider';
 import TestimonialCard from './TestimonialCard';
-import PropTypes from 'prop-types';
-import { Typewriter } from 'react-simple-typewriter';
+
 import { Fade } from 'react-awesome-reveal';
 const Testimonials = () => {
     const [testimonialsData, setTestimonialsData] = useState()
