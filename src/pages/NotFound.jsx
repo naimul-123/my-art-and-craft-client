@@ -1,5 +1,3 @@
-import React from 'react';
-import bgimage from "../../public/404.jpg"
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 const NotFound = () => {
