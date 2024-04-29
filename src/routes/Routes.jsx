@@ -43,19 +43,19 @@ const routes = createBrowserRouter([
             {
                 path: "/catagories/:catagory",
                 element: <SubCatagory></SubCatagory>,
-                loader: ({ params }) => fetch(`http://localhost:3000/catagories/${params.catagory}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/catagories/${params.catagory}`)
 
             },
             {
                 path: "/crafts/:id",
                 element: <PrivateRoute> <DetailsCraft /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/crafts/${params.id}`)
 
             },
             {
                 path: "/update/:id",
                 element: <PrivateRoute> <UpdateMyCraft /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/crafts/${params.id}`)
 
             },
 

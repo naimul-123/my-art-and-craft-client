@@ -12,7 +12,7 @@ const DetailsCraft = () => {
             <Helmet>
                 <title>Details</title>
             </Helmet>
-            <figure className='max-h-[50vh] h-svh'><img src={image} alt="Album" /></figure>
+            <figure className='max-h-[60vh]'><img src={image} alt="Album" className='h-full' /></figure>
             <div className="card-body">
                 <div className='space-y-2'>
                     <p className='text-3xl font-bold text-red-900'>
@@ -29,6 +29,11 @@ const DetailsCraft = () => {
                 </div>
                 <h2 className="card-title">{item_name}</h2>
                 <p>{description}</p>
+
+                <div className='card-actions justify-end'>
+                    <button className='btn btn-primary'>Add to cart</button>
+                    <button className='btn btn-primary'>Buy Now</button>
+                </div>
             </div>
         </div>
     );

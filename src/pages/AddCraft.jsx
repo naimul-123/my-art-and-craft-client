@@ -38,7 +38,7 @@ const AddCraft = () => {
 
 
 
-        fetch(`http://localhost:3000/crafts`, {
+        fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/crafts`, {
             method: "POST",
             headers: {
                 'Content-type': 'Application/json'

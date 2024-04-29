@@ -8,7 +8,7 @@ const SubCatagories = () => {
     // console.log("subcatagory", crafts)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/subcatagories`)
+        fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/subcatagories`)
             .then(res => res.json())
             .then(data => setCrafts(data))
     })

@@ -17,7 +17,7 @@ const MyCraft = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:3000/mycrafts`, {
+        fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/mycrafts`, {
             method: "POST",
             headers: {
                 "Content-type": "Application/json"
@@ -43,7 +43,7 @@ const MyCraft = () => {
             confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/mycrafts/${id}`, {
+                fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/mycrafts/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())

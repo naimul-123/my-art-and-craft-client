@@ -6,7 +6,7 @@ const TopratedCrafts = () => {
     // console.log(crafts)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/crafts/toprated`)
+        fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/crafts/toprated`)
             .then(res => res.json())
             .then(data => setCrafts(data))
     })

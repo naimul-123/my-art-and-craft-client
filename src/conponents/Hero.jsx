@@ -24,7 +24,7 @@ const Hero = () => {
     useEffect(() => {
 
         const dataLaoder = () => {
-            fetch(`http://localhost:3000/curosel`)
+            fetch(`https://assignment-10-server-irb98dscl-naimuls-projects-ee8c232f.vercel.app/curosel`)
                 .then(res => res.json())
                 .then(data => {
                     setCuroselData(data)
