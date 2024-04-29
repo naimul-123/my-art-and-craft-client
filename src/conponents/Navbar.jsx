@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
     const [theme, setTheme] = useState(() => {
@@ -18,19 +19,19 @@ const Navbar = () => {
 
     const links = (
         <>
-            <li>
+            <li className='inline-block'>
                 <NavLink to='/'>Home</NavLink>
             </li>
-            <li>
+            <li className='inline-block'>
                 <NavLink to='/allcraft'>All Art & craft</NavLink>
             </li>
 
-            <li>
+            <li className='inline-block'>
                 <NavLink to='/addcraft'>Add Craft</NavLink>
             </li>
 
             {user && (
-                <li>
+                <li className='inline-block'>
                     <NavLink to='/mycrafts'>My Art & Craft</NavLink>
                 </li>
             )}
@@ -56,11 +57,13 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <FaBars />
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+
+                        <ul tabIndex={0} className="menu min-w-96 w-full menu-lg dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
                             {links}
                         </ul>
+
                     </div>
                     <a className="btn btn-ghost text-xl">Brush & Palette</a>
                 </div>

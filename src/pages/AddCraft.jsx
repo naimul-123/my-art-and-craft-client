@@ -60,7 +60,7 @@ const AddCraft = () => {
             .catch(err => console.log(err.message))
     }
     return (
-        <div className=' max-w-screen-lg p-12 mx-auto bg-base-100'>
+        <div className=' max-w-screen-lg p-12 mx-auto'>
             <Helmet>
                 <title>Add new craft</title>
             </Helmet>

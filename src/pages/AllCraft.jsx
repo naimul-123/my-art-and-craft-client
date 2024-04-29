@@ -32,11 +32,11 @@ const AllCraft = () => {
             <Helmet>
                 <title>All crafts</title>
             </Helmet>
-            <div className="overflow-x-auto">
-                <table className="table max-w-screen-lg mx-auto">
+            <div className="max-w-screen-lg overflow-x-auto bg-base-300  mx-auto">
+                <table className="table   ">
                     {/* head */}
                     <thead className='text-center'>
-                        <tr>
+                        <tr className='font-bold'>
                             <th>
                                 SL
                             </th>
@@ -46,7 +46,7 @@ const AllCraft = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='border-collapse'>
 
                         {allCrafts.map((craft, idx) =>
 

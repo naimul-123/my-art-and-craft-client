@@ -12,7 +12,7 @@ const ArtAndCraftSection = () => {
     })
 
     return (
-        <div id='latest'>
+        <div id='latest' className="px-8 md:px-16 lg:px-24">
             <div className='flex flex-col items-center text-center my-6'>
                 <h2 className='text-5xl font-bold text-purple-500'>Latest Arts and Craft</h2>
                 <p>Here the latest arts and craft.</p>

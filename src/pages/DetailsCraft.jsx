@@ -8,7 +8,7 @@ const DetailsCraft = () => {
 
     return (
 
-        <div className="card max-w-screen-lg mx-auto  bg-base-100 shadow-xl p-16">
+        <div className="card max-w-screen-lg mx-auto  shadow-xl p-16">
             <Helmet>
                 <title>Details</title>
             </Helmet>

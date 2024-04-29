@@ -16,7 +16,7 @@ const MyArtsCard = ({ craft, handleDelete }) => {
 
 
     return (
-        <div className="card max-w-96 glass">
+        <div className="card glass">
 
 
             <figure className='max-h-72'><img src={image} alt={item_name} /></figure>
