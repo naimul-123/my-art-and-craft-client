@@ -3,62 +3,30 @@ import { useLoaderData } from 'react-router-dom';
 
 const DetailsCraft = () => {
     const craft = useLoaderData();
-    const { _id, image, item_name, description, author, email, price } = craft
+    const { _id, image, item_name, description, author, email, price, stock_status, processing_time, rating, customization } = craft;
+    console.log(craft)
     return (
-        <div className='flex  justify-center gap-6 p-24 rounded-md shadow-md'>
-            <div className=''>
-                <img
-                    src={image}
-                    alt={item_name}
-                    className='object-cover object-center h-full w-full rounded-xl'
-                />
+
+        <div className="card max-w-screen-lg mx-auto  bg-base-100 shadow-xl p-16">
+            <figure className='max-h-[50vh] h-svh'><img src={image} alt="Album" /></figure>
+            <div className="card-body">
+                <div className='space-y-2'>
+                    <p className='text-3xl font-bold text-red-900'>
+                        <span >{stock_status}</span> |
+                        <span >Price: ${price}</span> |
+                        <span >Processing Time: {processing_time}</span>days |
+                        <span >Customization:{customization.toUpperCase()}</span> |
+                        <span >Rating:{rating}</span>
+                    </p>
+                    <div>
+                        <p className='font-semibold font-lg'>Author: {author}</p>
+                        <p>Email: {email}</p>
+                    </div>
+                </div>
+                <h2 className="card-title">{item_name}</h2>
+                <p>{description}</p>
             </div>
-
-
-            <div className='gorw bg-base-300 p-6 rounded-lg'>
-                <h2 className='card-title text-gray-900 text-2xl md:text-3xl font-bold'>
-                    Details information
-                </h2>
-
-                <h2 className='text-2xl md:text-3xl text-center md:text-left font-bold text-gray-950 tracking-wide'>
-                    {item_name}
-                </h2>
-                <p className='text-base'>{description}</p>
-
-
-
-
-                <p className='inline-flex items-center text-base gap-1'>
-                    {' '}
-
-                    { }
-                </p>
-                <p className='inline-flex items-center text-base gap-1'>
-                    {' '}
-
-                    { }
-                </p>
-                <p className='inline-flex items-center text-base gap-1'>
-                    {' '}
-
-                </p>
-                <p className='inline-flex items-center text-base gap-1'>
-                    {' '}
-
-                </p>
-                <p className='inline-flex items-center text-base gap-1'>
-
-                </p>
-                <p className='inline-flex items-center text-base gap-1'>
-
-                </p>
-
-
-            </div>
-
-
         </div>
-
     );
 };
 

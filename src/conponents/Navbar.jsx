@@ -70,7 +70,7 @@ const Navbar = () => {
                     </ul>
 
                 </div>
-                <div className='navbar-end'>
+                <div className='navbar-end space-x-2 '>
                     {user ? (
                         <div className=' flex items-center gap-2'>
                             <Link

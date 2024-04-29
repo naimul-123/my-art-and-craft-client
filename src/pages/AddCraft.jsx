@@ -139,7 +139,7 @@ const AddCraft = () => {
                     <input
                         type='text'
                         name='processing_time'
-                        placeholder='Enter craft processing time in minute'
+                        placeholder='Enter craft processing time in days'
                         className='input input-bordered input-primary'
                         required
                     />
