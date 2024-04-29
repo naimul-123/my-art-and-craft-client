@@ -14,7 +14,7 @@ const SubCatagories = () => {
     })
 
     return (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center' id='subcatagory'>
 
             <h2 className="text-5xl font-bold text-purple-500 my-16">Subcatagories</h2>
 

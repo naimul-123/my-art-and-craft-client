@@ -12,7 +12,7 @@ const TopratedCrafts = () => {
     })
 
     return (
-        <div>
+        <div id='toprated'>
             <div className='flex flex-col items-center text-center my-6'>
                 <h2 className='text-5xl font-bold text-purple-500'>Top Rated Arts and Craft</h2>
             </div>

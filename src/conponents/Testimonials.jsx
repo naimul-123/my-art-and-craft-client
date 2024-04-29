@@ -29,8 +29,7 @@ const Testimonials = () => {
     })
 
     return (
-        <div className=' container p-0 sm:p-4 md:p-6 lg:p-12'
-            data-aos-duration="2000" >
+        <div className=' container p-0 sm:p-4 md:p-6 lg:p-12 ' id='feedback'>
             <div className=' mx-auto max-w-sm my-16 text-center'  >
                 <p className=' text-blue-800 inline-flex gap-6 '>
 

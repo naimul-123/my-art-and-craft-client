@@ -8,7 +8,7 @@ const SubCatagory = () => {
     const params = useParams();
 
     return (
-        <div className='flex flex-col items-center justify-center'>
+        <div className='flex flex-col items-center justify-center' >
             <Helmet>
                 <title>Sub catagory crafts</title>
             </Helmet>
