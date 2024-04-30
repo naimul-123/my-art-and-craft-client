@@ -18,7 +18,7 @@ const SubCatagories = () => {
 
             <div className='max-w-screen-sm mx-auto my-16 space-y-2'>
                 <Fade duration={3000} direction='left' delay={0} cascade damping={0}>
-                    <h2 className="text-5xl font-bold text-purple-500 text-center">
+                    <h2 className="text-5xl font-bold font-rancho  text-center bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
                         Subcatagories
                     </h2>
                     <p>

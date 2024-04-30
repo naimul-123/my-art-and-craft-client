@@ -9,7 +9,7 @@ const Slider = ({ singleData }) => {
                 <div className='hero-overlay opacity-50'></div>
                 <div className="hero-content text-center text-base-100">
                     <div className="max-w-md">
-                        <h2 className='text-xl md:text-2xl lg:text-3xl'>{title}</h2>
+                        <h2 className='text-xl md:text-2xl lg:text-3xl font-rancho'>{title}</h2>
                         <p className='text-sm md:text-base lg:text-lg'>{description}</p>
                         <a href={`#${to}`} className='btn btn-primary'>{btntext}</a>
                     </div>

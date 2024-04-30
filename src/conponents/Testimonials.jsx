@@ -38,7 +38,7 @@ const Testimonials = () => {
 
                         <span className='text-2xl'>Our Clients</span>{' '}
                     </p>
-                    <h2 className='font-bold text-3xl md:text-5xl'>Testimonial</h2>
+                    <h2 className='font-bold font-rancho text-3xl md:text-5xl bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient'>Testimonial</h2>
                 </Fade>
             </div>
 

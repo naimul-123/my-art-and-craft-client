@@ -17,7 +17,7 @@ const ArtAndCraftSection = () => {
         <div id='latest' className="px-8 md:px-16 lg:px-24">
             <div className='flex flex-col items-center text-center my-6'>
                 <Fade duration={3000} direction='left' delay={0} cascade damping={0}>
-                    <h2 className="text-5xl font-bold text-purple-500 text-center">
+                    <h2 className="text-5xl font-bold font-rancho text-center bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
                         Latest Arts and Craft
                     </h2>
                     <p>

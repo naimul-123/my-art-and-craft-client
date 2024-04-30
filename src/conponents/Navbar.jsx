@@ -61,12 +61,31 @@ const Navbar = () => {
                             <FaBars />
                         </div>
 
-                        <ul tabIndex={0} className="menu min-w-96 w-full menu-lg dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
+                        <ul tabIndex={0} className="menu  w-80  menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
                             {links}
+                            {user ? (<>
+
+                                <li>
+                                    <button
+
+                                        onClick={handleSignOut}>
+                                        Log Out
+                                    </button></li>
+                            </>) : (<>
+                                <li>
+                                    <NavLink
+                                        to='/login'>
+                                        Log in
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/register'>Register</NavLink>
+                                </li>
+                            </>)}
                         </ul>
 
                     </div>
-                    <a className="btn btn-ghost text-xl">
+                    <a className="btn btn-ghost text-2xl font-bold font-rancho bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
                         <Typewriter
                             words={['Brush & Palette']}
                             loop={1}
@@ -111,7 +130,7 @@ const Navbar = () => {
                             </Link>
                         </div>
                     ) : (
-                        <div className='flex items-center justify-center gap-3'>
+                        <div className='items-center hidden sm:inline-flex justify-center gap-3'>
                             <Link
                                 to='/login'
                                 className='btn btn-sm btn-secondary'>

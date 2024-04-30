@@ -83,7 +83,7 @@ const UpdateMyCraft = () => {
                 <title>Update my craft</title>
             </Helmet>
             <div className='text-center max-w-3/5 w-full'>
-                <h2 className='text-5xl font-rancho'>Add New Craft</h2>
+                <h2 className='text-5xl font-rancho'>Edit Craft</h2>
             </div>
 
             <form

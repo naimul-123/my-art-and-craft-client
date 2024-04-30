@@ -13,7 +13,6 @@ const MyCraft = () => {
         name: user.displayName,
         email: user.email,
         customization,
-
     }
 
     useEffect(() => {

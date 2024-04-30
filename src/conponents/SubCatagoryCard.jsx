@@ -14,7 +14,7 @@ const SubCatagoryCard = ({ craft }) => {
                 <div className="card-body justify-center items-center">
 
 
-                    <h2 className="card-title text-4xl font-bold">{sub_catagory}</h2>
+                    <h2 className="card-title text-4xl font-bold font-rancho">{sub_catagory}</h2>
 
                 </div>
             </Link>

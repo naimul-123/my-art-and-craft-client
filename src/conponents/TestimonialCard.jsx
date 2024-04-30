@@ -13,7 +13,7 @@ const TestimonialCard = ({ testimonial }) => {
                     alt={name}
                     className='w-20 h-20 rounded-full bg-gray-500'
                 />
-                <h3 className='text-2xl text-center font-semibold'>{name}</h3>
+                <h3 className='text-2xl text-center font-semibold font-rancho'>{name}</h3>
                 <blockquote className='max-w-lg text-lg italic font-medium text-center'>
                     {description}
                 </blockquote>
