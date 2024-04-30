@@ -25,7 +25,7 @@ const CraftRow = ({ craft, idx }) => {
                 <span>{author}</span>
                 <span className="badge badge-ghost badge-sm">{email}</span>
             </td>
-            <td>{price}</td>
+            <td>${price}</td>
             <th>
                 <Link to={`/crafts/${_id}`} className="btn btn-secondary hover:link btn-sm">view details</Link>
             </th>

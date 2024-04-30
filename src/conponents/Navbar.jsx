@@ -85,7 +85,7 @@ const Navbar = () => {
                         </ul>
 
                     </div>
-                    <a className="btn btn-ghost text-2xl font-bold font-rancho bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
+                    <Link to='/' className="btn btn-ghost text-2xl font-bold font-rancho bg-gradient-to-r from-purple-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
                         <Typewriter
                             words={['Brush & Palette']}
                             loop={1}
@@ -96,7 +96,7 @@ const Navbar = () => {
                             delaySpeed={1000}
 
                         />
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
