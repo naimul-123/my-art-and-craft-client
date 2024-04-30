@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const [isShow, setIsShow] = useState(false);
+    const [authErr, setAuthErr] = useState('')
     const {
         register,
         handleSubmit,
@@ -23,6 +24,8 @@ const Register = () => {
         toast('Successfully Registered!', {
             position: 'top-center',
         });
+
+
     const handelRegister = (data) => {
         const email = data.email;
         const password = data.password;
@@ -43,7 +46,7 @@ const Register = () => {
 
                     });
             })
-            .catch((error) => console.log(error.message));
+            .catch((error) => setAuthErr(error.message));
     };
 
     return (
@@ -148,6 +151,9 @@ const Register = () => {
                                 <button className='btn btn-primary'>Register</button>
                             </div>
                             <div className='form-control mt-6'>
+                                {authErr && (
+                                    <p className='text-red-600'> {authErr}</p>
+                                )}
                                 <p>
                                     Already have an account? Please{' '}
                                     <Link

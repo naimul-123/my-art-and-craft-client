@@ -20,19 +20,19 @@ const Navbar = () => {
 
     const links = (
         <>
-            <li className='inline-block'>
+            <li >
                 <NavLink to='/'>Home</NavLink>
             </li>
-            <li className='inline-block'>
+            <li >
                 <NavLink to='/allcraft'>All Art & craft</NavLink>
             </li>
 
-            <li className='inline-block'>
+            <li >
                 <NavLink to='/addcraft'>Add Craft</NavLink>
             </li>
 
             {user && (
-                <li className='inline-block'>
+                <li >
                     <NavLink to='/mycrafts'>My Art & Craft</NavLink>
                 </li>
             )}
@@ -53,7 +53,7 @@ const Navbar = () => {
         logOut().then().catch();
     };
     return (
-        <div>
+        <div className='sticky top-0 z-30'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <FaBars />
                         </div>
 
-                        <ul tabIndex={0} className="menu  w-80  menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
+                        <ul tabIndex={0} className="menu  w-72   menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
                             {links}
                             {user ? (<>
 
@@ -124,7 +124,7 @@ const Navbar = () => {
                             </Link>
 
                             <Link
-                                className='btn hidden sm:inline-flex btn-sm btn-secondary'
+                                className='btn hidden sm:inline-flex btn-sm btn-secondary  '
                                 onClick={handleSignOut}>
                                 Log Out
                             </Link>
@@ -133,10 +133,10 @@ const Navbar = () => {
                         <div className='items-center hidden sm:inline-flex justify-center gap-3'>
                             <Link
                                 to='/login'
-                                className='btn btn-sm btn-secondary'>
+                                className='btn btn-sm btn-secondary  '>
                                 Log in
                             </Link>
-                            <Link to='/register' className='btn btn-sm btn-primary'>Register</Link>
+                            <Link to='/register' className='btn btn-sm btn-primary  '>Register</Link>
                         </div>
                     )}
                     <label className="cursor-pointer grid place-items-center">

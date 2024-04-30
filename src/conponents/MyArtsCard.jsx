@@ -1,6 +1,10 @@
 import { Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Tooltip } from 'react-tooltip'
+import { FaEdit, FaEye } from 'react-icons/fa';
+import { FaDeleteLeft } from 'react-icons/fa6';
+
 const MyArtsCard = ({ craft, handleDelete }) => {
     const {
         _id,
@@ -16,34 +20,39 @@ const MyArtsCard = ({ craft, handleDelete }) => {
 
 
     return (
-        <div className="card glass">
 
-            <Zoom cascade duration={2000} damping={0.2}>
-                <figure className='max-h-72'><img src={image} alt={item_name} /></figure>
-                <div className="card-body">
-                    <div className='space-x-3'>
-                        <p className='text-xl font-bold text-red-900'>
-                            <span >{stock_status}</span> |
-                            <span >Price: ${price}</span> |
-                            <span >Processing Time: {processing_time}</span>days |
-                            <span >Customization:{customization.toUpperCase()}</span> |
-                            <span >Rating:{rating}</span>
-                        </p>
 
-                    </div>
-                    <div>
-                        <h2 className="card-title">{item_name}</h2>
-                        <p>Sub Catagory: <span className='badge'>{sub_catagory}</span> </p>
-                    </div>
-                    <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <Link to={`/crafts/${_id}`} className="btn btn-info">View Details</Link>
-                        <Link to={`/update/${_id}`} className="btn btn-secondary">Edit</Link>
-                        <button className="btn btn-warning" onClick={() => handleDelete(_id)}>delete</button>
-                    </div>
+
+        <div className="card max-w-screen-sm bg-base-100 shadow-xl p-4 ">
+            <Zoom cascade duration={2000} damping={0.2} className=''>
+                <figure className='h-72'><img src={image} alt={item_name} className='h-full' /></figure>
+
+                <div className='mx-auto w-full my-5 text-center'>
+                    <p className='text-xl font-bold text-green-500'>
+                        {stock_status} |
+                        Price: ${price} |
+                        Processing Time: {processing_time}days |
+                        Customization:{customization.toUpperCase()} |
+                        Rating:{rating} | <br />
+                        Sub Catagory:  {sub_catagory}
+                    </p>
                 </div>
             </Zoom>
-        </div>
+
+            <div className="card-body">
+
+                <h2 className="card-title">{item_name}</h2>
+                <p>{description}</p>
+
+                <div className="card-actions justify-center">
+                    <Link to={`/crafts/${_id}`} className="btn btn-info" id='show'><FaEye /> <Tooltip anchorSelect='#show' place='top'>View Details</Tooltip></Link>
+                    <Link to={`/update/${_id}`} className="btn btn-secondary" id='edit'><FaEdit /> <Tooltip anchorSelect='#edit' place='top'>Edit Your Craft</Tooltip></Link>
+                    <button className="btn btn-warning" onClick={() => handleDelete(_id)} id='del'><FaDeleteLeft /><Tooltip anchorSelect='#del' place='top'>Delete Your Craft</Tooltip></button>
+                </div>
+            </div>
+
+        </div >
+
     );
 };
 

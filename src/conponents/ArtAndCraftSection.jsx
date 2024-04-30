@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import CraftCard from './CraftCard';
 import { Typewriter } from 'react-simple-typewriter'
 import { Fade } from 'react-awesome-reveal';
-
+import { Link } from 'react-router-dom';
+import { FaLongArrowAltRight } from "react-icons/fa";
 const ArtAndCraftSection = () => {
     const [crafts, setCrafts] = useState([])
     // console.log(crafts)
@@ -37,10 +38,14 @@ const ArtAndCraftSection = () => {
 
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
 
                 {crafts && crafts.map((craft) => <CraftCard key={craft._id} craft={craft}></CraftCard>)}
 
+            </div>
+            <div className='flex justify-end my-8'>
+                <Link to="/allcraft" className='btn btn-sm  btn-secondary hover:btn-link
+                 rounded-full '> <FaLongArrowAltRight className='tracking-wide' /> Show all Arts and Crafts </Link>
             </div>
         </div>
     );

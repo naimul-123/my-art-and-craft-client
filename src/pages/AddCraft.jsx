@@ -65,7 +65,7 @@ const AddCraft = () => {
                 <title>Add new craft</title>
             </Helmet>
             <div className='text-center max-w-3/5 w-full'>
-                <h2 className='text-5xl font-rancho'>Add New Craft</h2>
+                <h2 className='text-5xl font-bold font-rancho text-primary'>Add New Craft</h2>
             </div>
 
             <form

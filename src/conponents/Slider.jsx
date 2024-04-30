@@ -11,7 +11,7 @@ const Slider = ({ singleData }) => {
                     <div className="max-w-md">
                         <h2 className='text-xl md:text-2xl lg:text-3xl font-rancho'>{title}</h2>
                         <p className='text-sm md:text-base lg:text-lg'>{description}</p>
-                        <a href={`#${to}`} className='btn btn-primary'>{btntext}</a>
+                        <a href={`#${to}`} className='btn border-none text-white font-bold rounded-lg bg-gradient-to-r from-[#c943e1]  to-purple-800'>{btntext}</a>
                     </div>
                 </div>
             </div>

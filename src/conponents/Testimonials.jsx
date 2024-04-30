@@ -29,7 +29,7 @@ const Testimonials = () => {
     })
 
     return (
-        <div className=' container p-0 sm:p-4 md:p-6 lg:p-12 ' id='feedback'>
+        <div className=' container p-0 sm:p-4 md:p-6 lg:p-12 mx-auto' id='feedback'>
             <div className=' mx-auto max-w-sm my-16 text-center'  >
 
 

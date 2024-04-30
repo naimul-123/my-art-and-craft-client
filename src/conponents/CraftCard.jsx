@@ -8,38 +8,35 @@ const CraftCard = ({ craft }) => {
     return (
 
 
-        <div className="card glass">
+        <div className="card max-w-screen-sm bg-base-100 shadow-xl p-4 ">
             <Zoom cascade duration={2000} damping={0.2} className=''>
-                <figure className='max-h-72'><img src={image} alt={item_name} /></figure>
-                <div className="card-body ">
-                    <div className='space-y-2 grow'>
-                        <p className='text-xl font-bold text-red-900'>
-                            <span >{stock_status}</span> |
-                            <span >Price: ${price}</span> |
-                            <span >Processing Time: {processing_time}</span>days |
-                            <span >Customization:{customization.toUpperCase()}</span> |
-                            <span >Rating:{rating}</span>
-                        </p>
+                <figure className='h-72'><img src={image} alt={item_name} className='h-full' /></figure>
 
-
-                        <div>
-                            <h2 className="card-title">{item_name}</h2>
-                            <p>Sub Catagory: <span className='badge'>{sub_catagory}</span> </p>
-                        </div>
-                        <p>{description}</p>
-
-                    </div>
-
-
-                    <div className="card-actions justify-end">
-
-                        <Link to={`/crafts/${_id}`} className="btn btn-primary">View Details</Link>
-
-                    </div>
-
+                <div className='mx-auto w-full my-5 text-center'>
+                    <p className='text-xl font-bold text-green-500'>
+                        {stock_status} |
+                        Price: ${price} |
+                        Processing Time: {processing_time}days |
+                        Customization:{customization.toUpperCase()} |
+                        Rating:{rating} | <br />
+                        Sub Catagory:  {sub_catagory}
+                    </p>
                 </div>
             </Zoom>
-        </div>
+
+            <div className="card-body">
+
+                <h2 className="card-title">{item_name}</h2>
+                <p>{description}</p>
+
+                <div className="card-actions justify-center ">
+                    <Link to={`/crafts/${_id}`} className="w-full p-3 text-center font-semibold tracking-wide rounded-md bg-purple-600 text-gray-100">View Details</Link>
+                </div>
+
+            </div>
+
+        </div >
+
 
     );
 };

@@ -72,7 +72,7 @@ const MyCraft = () => {
         setCustomization(status)
     }
     return (
-        <div className='flex flex-col items-center gap-3'>
+        <div className='flex flex-col items-center gap-3 my-6 px-8 md:px-16 lg:px-24'>
             <Helmet>
                 <title>My Craft</title>
             </Helmet>

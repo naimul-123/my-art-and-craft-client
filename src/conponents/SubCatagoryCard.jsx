@@ -8,17 +8,19 @@ const SubCatagoryCard = ({ craft }) => {
 
     return (
 
-        <Zoom duration={2000} cascade damping={0.2}>
-            <Link to={`/catagories/${sub_catagory}`} className="card image-full max-h-72 hover:scale-105 transform duration-1000 ">
-                <figure className=''><img src={image} alt={sub_catagory} /></figure>
-                <div className="card-body justify-center items-center">
+
+        <Link to={`/catagories/${sub_catagory}`} className="card image-full rounded-lg hover:scale-105 transform duration-1000 ">
+            <Zoom duration={2000} cascade damping={0.2}>
+                <figure className='h-36'><img src={image} alt={sub_catagory} className='rounded-lg' /></figure>
+            </Zoom>
+            <div className="card-body justify-center items-center">
 
 
-                    <h2 className="card-title text-4xl font-bold font-rancho">{sub_catagory}</h2>
+                <h2 className="card-title text-4xl font-bold font-rancho">{sub_catagory}</h2>
 
-                </div>
-            </Link>
-        </Zoom>
+            </div>
+        </Link>
+
     );
 };
 
