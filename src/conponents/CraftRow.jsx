@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 const CraftRow = ({ craft, idx }) => {
-    const { _id, image, item_name, description, author, email, price } = craft;
+    const { _id, image, item_name, author, email, price } = craft;
     return (
         <tr className='border-2'>
 
@@ -17,18 +17,17 @@ const CraftRow = ({ craft, idx }) => {
                     </div>
                     <div className='flex flex-col max-w-sm'>
                         <p className="font-bold">{item_name}</p>
-                        <p className="text-sm opacity-50">{description}</p>
+
                     </div>
                 </div>
             </td>
-            <td>
-                {author}
-                <br />
+            <td className='flex flex-col'>
+                <span>{author}</span>
                 <span className="badge badge-ghost badge-sm">{email}</span>
             </td>
             <td>{price}</td>
             <th>
-                <Link to={`/crafts/${_id}`} className="btn btn-secondary hover:link btn-xs">view details</Link>
+                <Link to={`/crafts/${_id}`} className="btn btn-secondary hover:link btn-sm">view details</Link>
             </th>
         </tr>
 

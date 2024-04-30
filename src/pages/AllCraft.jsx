@@ -31,11 +31,11 @@ const AllCraft = () => {
             <Helmet>
                 <title>All crafts</title>
             </Helmet>
-            <div className="max-w-screen-lg overflow-x-auto bg-base-300  mx-auto">
-                <table className="table   ">
+            <div className="max-w-screen-lg overflow-x-auto  mx-auto">
+                <table className="table table-pin-rows table-pin-cols   ">
                     {/* head */}
-                    <thead className='text-center'>
-                        <tr className='font-bold'>
+                    <thead className='text-cente'>
+                        <tr className='font-bold border-b-2'>
                             <th>
                                 SL
                             </th>
