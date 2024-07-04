@@ -21,19 +21,31 @@ const Navbar = () => {
     const links = (
         <>
             <li >
-                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/' className={({ isActive }) =>
+                    isActive ? "bg-green-500 hover:bg-green-600 text-white" : "bg-green-300 hover:bg-green-400"
+                }>Home</NavLink>
             </li>
+            {/* className={({ isActive, isPending }) =>
+isPending ? "pending" : isActive ? "bg-green-400" : "bg-red-400"
+}
+ */}
             <li >
-                <NavLink to='/allcraft'>All Art & craft</NavLink>
+                <NavLink to='/allcraft' className={({ isActive }) =>
+                    isActive ? "bg-green-500" : "bg-green-300 hover:bg-green-400"
+                }>All Art & craft</NavLink>
             </li>
 
             <li >
-                <NavLink to='/addcraft'>Add Craft</NavLink>
+                <NavLink to='/addcraft' className={({ isActive }) =>
+                    isActive ? "bg-green-500" : "bg-green-300 hover:bg-green-400"
+                }>Add Craft</NavLink>
             </li>
 
             {user && (
                 <li >
-                    <NavLink to='/mycrafts'>My Art & Craft</NavLink>
+                    <NavLink to='/mycrafts' className={({ isActive }) =>
+                        isActive ? "bg-green-500" : "bg-green-300"
+                    }>My Art & Craft</NavLink>
                 </li>
             )}
 
