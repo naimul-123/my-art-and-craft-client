@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const links = (
         <>
-            <li >
+            <li className='px-2' >
                 <NavLink to='/' className={({ isActive }) =>
                     isActive ? "bg-green-500 hover:bg-green-600 text-white" : "bg-green-300 hover:bg-green-400"
                 }>Home</NavLink>
@@ -29,20 +29,20 @@ const Navbar = () => {
 isPending ? "pending" : isActive ? "bg-green-400" : "bg-red-400"
 }
  */}
-            <li >
+            <li className='px-2' >
                 <NavLink to='/allcraft' className={({ isActive }) =>
                     isActive ? "bg-green-500" : "bg-green-300 hover:bg-green-400"
                 }>All Art & craft</NavLink>
             </li>
 
-            <li >
+            <li className='px-2'>
                 <NavLink to='/addcraft' className={({ isActive }) =>
                     isActive ? "bg-green-500" : "bg-green-300 hover:bg-green-400"
                 }>Add Craft</NavLink>
             </li>
 
             {user && (
-                <li >
+                <li className='px-2'>
                     <NavLink to='/mycrafts' className={({ isActive }) =>
                         isActive ? "bg-green-500" : "bg-green-300"
                     }>My Art & Craft</NavLink>
@@ -73,7 +73,7 @@ isPending ? "pending" : isActive ? "bg-green-400" : "bg-red-400"
                             <FaBars />
                         </div>
 
-                        <ul tabIndex={0} className="menu  w-72   menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
+                        <ul tabIndex={0} className="menu  w-72 gap-2   menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box">
                             {links}
                             {user ? (<>
 
